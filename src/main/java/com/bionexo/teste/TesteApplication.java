@@ -18,19 +18,6 @@ public class TesteApplication {
 	public static void main(String[] args) throws IOException  {
 		SpringApplication.run(TesteApplication.class, args);
 
-
-
-		Reader reader = Files.newBufferedReader(Paths.get(ClassLoader.getSystemResource("ubs.csv").getFile()));
-
-		CsvToBean<UbsCsv> csvToBean = new CsvToBeanBuilder(reader)
-				.withType(UbsCsv.class)
-				.build();
-
-		List<UbsCsv> unidades = csvToBean.parse();
-
-		for (UbsCsv unidade : unidades)
-			System.out.println(unidade.getNom_estab());
-
 	}
 
 }
